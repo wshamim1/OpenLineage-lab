@@ -1,0 +1,73 @@
+version: '3.7'
+
+services:
+  # PostgreSQL database for Marquez
+  db:
+    image: docker.io/library/postgres:15
+    container_name: marquez-db
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=marquez
+      - POSTGRES_PASSWORD=marquez
+      - POSTGRES_DB=marquez
+      - MARQUEZ_CONFIG=/usr/local/marquez/marquez.yml
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    networks:
+      - marquez-network
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "marquez"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # Marquez API server
+  api:
+    image: docker.io/marquezproject/marquez:latest
+    container_name: marquez-api
+    ports:
+      - "5000:5000"
+      - "5001:5001"
+    environment:
+      - MARQUEZ_PORT=5000
+      - MARQUEZ_ADMIN_PORT=5001
+      - POSTGRES_HOST=db
+      - POSTGRES_PORT=5432
+      - POSTGRES_DB=marquez
+      - POSTGRES_USER=marquez
+      - POSTGRES_PASSWORD=marquez
+    depends_on:
+      db:
+        condition: service_healthy
+    networks:
+      - marquez-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5001/healthcheck"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # Marquez Web UI
+  web:
+    image: docker.io/marquezproject/marquez-web:latest
+    container_name: marquez-web
+    ports:
+      - "3000:3000"
+    environment:
+      - MARQUEZ_HOST=api
+      - MARQUEZ_PORT=5000
+    depends_on:
+      api:
+        condition: service_healthy
+    networks:
+      - marquez-network
+
+networks:
+  marquez-network:
+    driver: bridge
+
+volumes:
+  db-data:
+
+# Made with Bob
