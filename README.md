@@ -212,5 +212,3 @@ Should show: `marquez-db`, `marquez-api`, `marquez-web`
 6. 🔧 Integrate with your own pipelines
 
 ---
-
-**Made with Bob** 🤖

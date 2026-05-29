@@ -168,5 +168,3 @@ echo "  Input:  test-input-dataset"
 echo "  Output: test-output-dataset (with schema: id, name, created_at)"
 echo ""
 echo -e "${YELLOW}Tip: Open ${WEB_URL} and search for 'test-job' to see the lineage graph!${NC}"
-
-# Made with Bob

@@ -183,4 +183,3 @@ fi
 echo ""
 echo -e "${YELLOW}Note: It may take a minute for all services to be fully ready.${NC}"
 
-# Made with Bob

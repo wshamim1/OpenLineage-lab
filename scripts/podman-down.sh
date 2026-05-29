@@ -39,5 +39,3 @@ echo "  podman volume rm marquez-db-data"
 echo ""
 echo "To remove network:"
 echo "  podman network rm marquez-network"
-
-# Made with Bob
