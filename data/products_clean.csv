@@ -1,0 +1,7 @@
+product_id,name,price,category,stock
+1,Laptop,1200,electronics,8
+2,Mouse,25,accessories,120
+3,Keyboard,75,accessories,80
+4,Monitor,350,electronics,22
+5,Headphones,150,accessories,45
+6,Webcam,110,electronics,60

@@ -20,4 +20,3 @@ venv/
 *.log
 
 # Generated data artifacts from examples
-data/*.csv

@@ -1,0 +1,5 @@
+product_id,name,price,category,stock,price_tier
+1,Laptop,1200,electronics,8,premium
+4,Monitor,350,electronics,22,premium
+5,Headphones,150,accessories,45,premium
+6,Webcam,110,electronics,60,premium

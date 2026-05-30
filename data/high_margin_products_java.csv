@@ -1,0 +1,5 @@
+product_id,name,cost,price,margin,category
+1,Laptop,850.0,1200.0,350.0,Electronics
+4,Monitor,220.0,350.0,130.0,Electronics
+5,Headphones,90.0,150.0,60.0,Accessories
+6,Webcam,60.0,110.0,50.0,Electronics
