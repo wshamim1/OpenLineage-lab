@@ -7,7 +7,7 @@ Python examples demonstrating how to track data lineage with OpenLineage and Mar
 1. **Marquez services running**
    ```bash
    cd ../..
-   ./scripts/podman-up.sh --api-port 5050
+    ./install-scripts/compose.sh up -d
    ```
 
 2. **Python 3.7+** installed
@@ -24,6 +24,9 @@ Python examples demonstrating how to track data lineage with OpenLineage and Mar
 ```bash
 # Run the simple example
 python3 simple_example.py
+
+# Run the multi-stage pipeline example
+python3 multi_stage_example.py
 
 # Or run the database example
 python3 database_example.py
@@ -43,6 +46,7 @@ python3 python-lineage-example.py
 
 ### Examples
 - **`simple_example.py`** - Simple example using the generic tracker
+- **`multi_stage_example.py`** - Multi-stage pipeline with intermediate datasets and two marts
 - **`database_example.py`** - Database/S3 example using the generic tracker
 - **`python-lineage-example.py`** - Complete CSV processing example (standalone)
 
