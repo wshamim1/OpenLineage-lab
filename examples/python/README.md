@@ -28,6 +28,9 @@ python3 simple_example.py
 # Run the multi-stage pipeline example
 python3 multi_stage_example.py
 
+# Run the intentional failing example (emits FAIL event)
+python3 failing_example.py || true
+
 # Or run the database example
 python3 database_example.py
 ```
@@ -47,6 +50,7 @@ python3 python-lineage-example.py
 ### Examples
 - **`simple_example.py`** - Simple example using the generic tracker
 - **`multi_stage_example.py`** - Multi-stage pipeline with intermediate datasets and two marts
+- **`failing_example.py`** - Intentionally fails to demonstrate FAIL lineage events
 - **`database_example.py`** - Database/S3 example using the generic tracker
 - **`python-lineage-example.py`** - Complete CSV processing example (standalone)
 
